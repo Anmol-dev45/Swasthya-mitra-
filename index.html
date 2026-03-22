@@ -702,22 +702,30 @@
   <body>
     <nav class="sticky-nav">
       <span>स्वास्थ्य मित्र</span>
-      <button class="nav-btn active" onclick="scrollTo('tech')">
+      <button class="nav-btn active" onclick="scrollToSection('tech', this)">
         Tech & Offline
       </button>
-      <button class="nav-btn" onclick="scrollTo('cost')">Cost</button>
-      <button class="nav-btn" onclick="scrollTo('roadmap')">Roadmap</button>
-      <button class="nav-btn" onclick="scrollTo('revenue')">
+      <button class="nav-btn" onclick="scrollToSection('cost', this)">
+        Cost
+      </button>
+      <button class="nav-btn" onclick="scrollToSection('roadmap', this)">
+        Roadmap
+      </button>
+      <button class="nav-btn" onclick="scrollToSection('revenue', this)">
         Revenue model
       </button>
-      <button class="nav-btn" onclick="scrollTo('projections')">
+      <button class="nav-btn" onclick="scrollToSection('projections', this)">
         Projections
       </button>
-      <button class="nav-btn" onclick="scrollTo('funding')">Funding</button>
-      <button class="nav-btn" onclick="scrollTo('moat')">
+      <button class="nav-btn" onclick="scrollToSection('funding', this)">
+        Funding
+      </button>
+      <button class="nav-btn" onclick="scrollToSection('moat', this)">
         Competitive moat
       </button>
-      <button class="nav-btn" onclick="scrollTo('risks')">Risks</button>
+      <button class="nav-btn" onclick="scrollToSection('risks', this)">
+        Risks
+      </button>
     </nav>
 
     <div class="hero">
@@ -1903,13 +1911,13 @@
     <!-- /content -->
 
     <script>
-      function scrollTo(id) {
+      function scrollToSection(id, clickedBtn) {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
         document
           .querySelectorAll(".nav-btn")
           .forEach((b) => b.classList.remove("active"));
-        event.target.classList.add("active");
+        if (clickedBtn) clickedBtn.classList.add("active");
       }
       window.addEventListener("scroll", function () {
         const sections = [
