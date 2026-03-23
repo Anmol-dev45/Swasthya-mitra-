@@ -84,6 +84,24 @@
         color: #fff;
         border-color: var(--teal);
       }
+      .route-link {
+        margin-left: auto;
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 20px;
+        border: 0.5px solid var(--teal);
+        background: var(--teal-light);
+        color: var(--teal-dark);
+        text-decoration: none;
+        font-weight: 600;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      .route-link:hover {
+        background: var(--teal);
+        color: #fff;
+      }
 
       /* ── HERO ── */
       .hero {
@@ -726,6 +744,7 @@
       <button class="nav-btn" onclick="scrollToSection('risks', this)">
         Risks
       </button>
+      <a class="route-link" href="/rapidfire_qna/">Rapidfire QnA</a>
     </nav>
 
     <div class="hero">

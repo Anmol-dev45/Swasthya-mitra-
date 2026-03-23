@@ -1,0 +1,1643 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Swasthya Mitra — 12-Minute Rapid Fire Q&A</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --bg: #0d0d0b;
+        --s1: #161614;
+        --s2: #1e1e1b;
+        --s3: #262622;
+        --b1: rgba(255, 255, 255, 0.07);
+        --b2: rgba(255, 255, 255, 0.13);
+        --b3: rgba(255, 255, 255, 0.2);
+        --tx: #e6e4dc;
+        --tx2: #a09e96;
+        --tx3: #636158;
+        --teal: #27c489;
+        --teal-bg: rgba(39, 196, 137, 0.1);
+        --teal-dark: #0e7a52;
+        --red: #e55;
+        --red-bg: rgba(238, 85, 85, 0.1);
+        --amb: #d48a10;
+        --amb-bg: rgba(212, 138, 16, 0.1);
+        --blu: #5a9cd6;
+        --blu-bg: rgba(90, 156, 214, 0.1);
+        --pur: #9480d8;
+        --pur-bg: rgba(148, 128, 216, 0.1);
+        --grn: #5bba6f;
+        --grn-bg: rgba(91, 186, 111, 0.1);
+        --r: 8px;
+        --rl: 12px;
+      }
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--tx);
+        line-height: 1.6;
+      }
+
+      .top-nav {
+        max-width: 960px;
+        margin: 1rem auto 0;
+        padding: 0 1.5rem;
+      }
+      .top-link {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--teal);
+        border: 0.5px solid var(--b2);
+        background: var(--s2);
+        padding: 4px 10px;
+        border-radius: 20px;
+        transition: all 0.15s;
+      }
+      .top-link:hover {
+        background: var(--teal);
+        color: #0d0d0b;
+        border-color: var(--teal);
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        padding: 2.5rem 1.5rem 1.5rem;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .hero-eye {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-bottom: 0.6rem;
+      }
+      .hero h1 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 0.6rem;
+      }
+      .hero p {
+        font-size: 12.5px;
+        color: var(--tx2);
+        max-width: 640px;
+        line-height: 1.7;
+      }
+      .chips {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+      .chip {
+        font-size: 10px;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 20px;
+        border: 0.5px solid var(--b2);
+        color: var(--tx2);
+      }
+      .chip b {
+        color: var(--teal);
+      }
+
+      /* ─── TIMING BAR ─── */
+      .tbar {
+        max-width: 960px;
+        margin: 0 auto 1rem;
+        padding: 0 1.5rem;
+      }
+      .tbar-inner {
+        background: var(--s2);
+        border: 0.5px solid var(--b1);
+        border-radius: var(--rl);
+        padding: 1rem 1.25rem;
+      }
+      .tbar-inner h3 {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--tx2);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
+      }
+      .tbar-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .tbar-seg {
+        border-radius: var(--r);
+        padding: 0.5rem 0.75rem;
+        text-align: center;
+      }
+      .tbar-seg .seg-min {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+      .tbar-seg .seg-lbl {
+        font-size: 10px;
+        color: var(--tx3);
+        line-height: 1.4;
+      }
+      .tbar-seg .seg-qs {
+        font-size: 10px;
+        font-weight: 600;
+        margin-top: 3px;
+      }
+
+      /* ─── FILTER ─── */
+      .fbar {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1.5rem 0.75rem;
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+      .fb {
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 11px;
+        border-radius: 20px;
+        border: 0.5px solid var(--b2);
+        background: transparent;
+        color: var(--tx3);
+        cursor: pointer;
+        letter-spacing: 0.3px;
+        transition: all 0.15s;
+      }
+      .fb:hover {
+        color: var(--teal);
+        border-color: var(--teal);
+      }
+      .fb.on {
+        background: var(--teal);
+        color: #0d0d0b;
+        border-color: var(--teal);
+      }
+
+      /* ─── MAIN ─── */
+      .main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1.5rem 4rem;
+      }
+
+      /* ─── SECTION HEADER ─── */
+      .sec-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 1.75rem 0 0.75rem;
+      }
+      .sec-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+      .sec-title {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+      }
+      .sec-sub {
+        font-size: 11px;
+        color: var(--tx3);
+        margin-left: auto;
+      }
+
+      /* ─── Q CARD ─── */
+      .qc {
+        background: var(--s1);
+        border: 0.5px solid var(--b1);
+        border-radius: var(--r);
+        margin-bottom: 8px;
+        overflow: hidden;
+        transition: border-color 0.15s;
+      }
+      .qc:hover {
+        border-color: var(--b2);
+      }
+      .qc.open {
+        border-color: var(--b2);
+        background: var(--s2);
+      }
+      .qh {
+        padding: 0.75rem 1rem;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        cursor: pointer;
+        user-select: none;
+      }
+      .qh-left {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+        flex: 1;
+      }
+      .q-badges {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .badge {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 1px 6px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        flex-shrink: 0;
+      }
+      .qtxt {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--tx);
+        line-height: 1.45;
+      }
+      .qright {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        flex-shrink: 0;
+        padding-top: 1px;
+      }
+      .timing-pill {
+        font-size: 9px;
+        font-weight: 700;
+        background: var(--s3);
+        color: var(--tx3);
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      .chevron {
+        font-size: 11px;
+        color: var(--tx3);
+        transition: transform 0.2s;
+      }
+      .qc.open .chevron {
+        transform: rotate(180deg);
+      }
+
+      /* ─── BODY ─── */
+      .qb {
+        display: none;
+        padding: 0.1rem 1rem 1rem 1rem;
+        border-top: 0.5px solid var(--b1);
+      }
+      .qc.open .qb {
+        display: block;
+      }
+      .ans-lbl {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin: 0.8rem 0 0.35rem;
+      }
+      .ans {
+        font-size: 12.5px;
+        color: var(--tx2);
+        line-height: 1.72;
+      }
+      .ans strong {
+        color: var(--tx);
+        font-weight: 600;
+      }
+      .kp {
+        border-left: 2px solid var(--teal);
+        background: var(--teal-bg);
+        border-radius: 0 6px 6px 0;
+        padding: 0.55rem 0.8rem;
+        margin: 0.8rem 0;
+        font-size: 12px;
+        color: var(--tx);
+        font-style: italic;
+        line-height: 1.6;
+      }
+      .trap-lbl {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin: 0.75rem 0 0.3rem;
+      }
+      .trap {
+        background: var(--red-bg);
+        border-radius: 6px;
+        padding: 0.5rem 0.75rem;
+        font-size: 11.5px;
+        color: var(--tx2);
+        line-height: 1.6;
+      }
+      .followup {
+        background: var(--s3);
+        border-radius: 6px;
+        padding: 0.5rem 0.75rem;
+        margin-top: 0.6rem;
+        font-size: 11px;
+        color: var(--tx3);
+        line-height: 1.5;
+      }
+      .followup b {
+        color: var(--tx2);
+      }
+
+      /* ─── COLORS ─── */
+      .c-biz {
+        background: var(--blu-bg);
+        color: var(--blu);
+      }
+      .c-tech {
+        background: var(--pur-bg);
+        color: var(--pur);
+      }
+      .c-mkt {
+        background: var(--teal-bg);
+        color: var(--teal);
+      }
+      .c-team {
+        background: var(--amb-bg);
+        color: var(--amb);
+      }
+      .c-risk {
+        background: var(--red-bg);
+        color: var(--red);
+      }
+      .c-hard {
+        background: rgba(238, 85, 85, 0.12);
+        color: #f08080;
+      }
+      .c-med {
+        background: rgba(212, 138, 16, 0.12);
+        color: var(--amb);
+      }
+      .c-easy {
+        background: rgba(91, 186, 111, 0.12);
+        color: var(--grn);
+      }
+      .dot-biz {
+        background: var(--blu);
+      }
+      .dot-tech {
+        background: var(--pur);
+      }
+      .dot-mkt {
+        background: var(--teal);
+      }
+      .dot-team {
+        background: var(--amb);
+      }
+      .dot-risk {
+        background: var(--red);
+      }
+
+      /* ─── BOTTOM NOTE ─── */
+      .bottom {
+        background: var(--s2);
+        border: 0.5px solid var(--b1);
+        border-radius: var(--rl);
+        padding: 1.25rem;
+        margin-top: 1.5rem;
+      }
+      .bottom h3 {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--tx);
+        margin-bottom: 0.6rem;
+      }
+      .bottom p {
+        font-size: 12px;
+        color: var(--tx2);
+        line-height: 1.7;
+        margin-bottom: 0.5rem;
+      }
+      .bottom p:last-child {
+        margin-bottom: 0;
+      }
+      .bottom b {
+        color: var(--tx);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-nav">
+      <a class="top-link" href="/">← Back to Implementation Plan</a>
+    </div>
+
+    <div class="hero">
+      <div class="hero-eye">Swasthya Mitra · Investor Pitch Prep</div>
+      <h1>12-minute Q&A.<br />25 questions. Every hard one.</h1>
+      <p>
+        In 12 minutes, a panel of investor judges will fire rapid-fire probes —
+        some 20 seconds, some follow-ups, some traps. These are all of them, in
+        the order they're likely to come, with battle-ready answers. Click any
+        card to expand.
+      </p>
+      <div class="chips">
+        <span class="chip"><b>12</b> minutes total</span>
+        <span class="chip"><b>25–30 sec</b> ideal answer length</span>
+        <span class="chip"><b>5 categories</b> of attack</span>
+        <span class="chip"><b>Rule #1:</b> Never say "great question"</span>
+        <span class="chip"
+          ><b>Rule #2:</b> Stop talking when you've answered</span
+        >
+        <span class="chip"><b>Rule #3:</b> Numbers > adjectives</span>
+      </div>
+    </div>
+
+    <div class="tbar">
+      <div class="tbar-inner">
+        <h3>Expected pacing across 12 minutes</h3>
+        <div class="tbar-grid">
+          <div class="tbar-seg" style="background: var(--blu-bg)">
+            <div class="seg-min" style="color: var(--blu)">3 min</div>
+            <div class="seg-lbl">Business model & money</div>
+            <div class="seg-qs" style="color: var(--blu)">Q1–Q6</div>
+          </div>
+          <div class="tbar-seg" style="background: var(--teal-bg)">
+            <div class="seg-min" style="color: var(--teal)">3 min</div>
+            <div class="seg-lbl">Market & competition</div>
+            <div class="seg-qs" style="color: var(--teal)">Q7–Q12</div>
+          </div>
+          <div class="tbar-seg" style="background: var(--pur-bg)">
+            <div class="seg-min" style="color: var(--pur)">3 min</div>
+            <div class="seg-lbl">Technology & product</div>
+            <div class="seg-qs" style="color: var(--pur)">Q13–Q18</div>
+          </div>
+          <div class="tbar-seg" style="background: var(--amb-bg)">
+            <div class="seg-min" style="color: var(--amb)">3 min</div>
+            <div class="seg-lbl">Team, risk & closing</div>
+            <div class="seg-qs" style="color: var(--amb)">Q19–Q25</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fbar">
+      <button class="fb on" onclick="filter('all', this)">All 25</button>
+      <button class="fb" onclick="filter('biz', this)">
+        💰 Business model
+      </button>
+      <button class="fb" onclick="filter('mkt', this)">📈 Market</button>
+      <button class="fb" onclick="filter('tech', this)">⚙️ Technology</button>
+      <button class="fb" onclick="filter('team', this)">👥 Team</button>
+      <button class="fb" onclick="filter('risk', this)">⚠️ Risk</button>
+    </div>
+
+    <div class="main">
+      <!-- ══ SECTION 1: BUSINESS MODEL ══ -->
+      <div class="sec-head" data-cat="biz">
+        <div class="sec-dot dot-biz"></div>
+        <span class="sec-title" style="color: var(--blu)"
+          >Business model & money</span
+        >
+        <span class="sec-sub">Q1 – Q6 · ~3 minutes</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qc" data-cat="biz">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-biz">Business</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "Who exactly pays you? The FCHVs are volunteers. Patients are
+              rural poor. Where does the money actually come from?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~25 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            <strong>Municipalities pay.</strong> Nepal's 2017 federalisation
+            gave all 753 municipalities their own health budgets and legal
+            authority to procure health services. The ward office, not
+            Kathmandu, is our client. They're already spending NPR 5–15 lakh per
+            year on Falgun NCD Screening Month — paper registers, manual data,
+            FCHV stipends. We replace the paper-based spend with our platform
+            for the same budget line. The FCHV app is free forever. The
+            municipality pays for the dashboard, reports, and data
+            infrastructure. FCHVs don't pay. Patients don't pay. Government pays
+            — because they're legally required to do NCD reporting and currently
+            doing it badly.
+          </div>
+          <div class="kp">
+            "The FCHVs are the product users. Municipalities are the customers.
+            The budget already exists — we're redirecting it, not creating it."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qc" data-cat="biz">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-biz">Business</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "NPR 5–8 lakh per municipality per year. 753 municipalities total.
+              That's a ceiling of NPR 60 Cr — and you'll never get all 753. This
+              isn't venture scale. Why should I care?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~30 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Municipality SaaS is the beachhead, not the ceiling. Three layers
+            above it: <strong>Province health offices</strong> pay NPR 20–30
+            lakh for aggregate analytics — 7 provinces.
+            <strong>MoHP-level national licensing</strong> for NHMIS
+            integration. And the real scale play:
+            <strong>regional replication</strong>. Bangladesh, Sri Lanka,
+            Myanmar, Cambodia — all have community health worker networks, zero
+            unified NCD digital tool. A $15–20K licensing fee per country
+            deployment gets us to $1–2M ARR without rebuilding the product.
+            Nepal is the proof of concept. Medic Mobile proved the same model in
+            Ethiopia, then licensed globally. That's our path.
+          </div>
+          <div class="kp">
+            "Municipality SaaS is our wedge. Province analytics and regional
+            licensing are our scale. Nepal is the pilot; South Asia is the
+            market."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qc" data-cat="biz">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-biz">Business</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "Government procurement in Nepal takes 6–18 months. How do you
+              survive while waiting for your first cheque?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~25 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            We deliberately don't depend on government revenue in Year 1. Our
+            survival is grant-funded: Nepal's
+            <strong>Startup Fund offers up to NPR 25 lakh</strong> —
+            non-dilutive, disbursed in 3–6 months — which covers our entire MVP
+            build. In parallel, WHO Nepal and the World Diabetes Foundation fund
+            FCHV programmes already. We approach them as co-implementation
+            partners, not just funders. Their project grants flow in 6–9 months,
+            independent of municipal procurement cycles. We use the free pilot
+            period to generate outcomes data, so when municipality budget season
+            opens in Ashad, we walk in with a proven case, not a pitch deck.
+          </div>
+          <div class="kp">
+            "Grant-first to build. Donor projects to bridge. Municipal SaaS to
+            scale. Three separate timelines — we don't mix them up."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qc" data-cat="biz">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-biz">Business</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "What's your unit economics? Cost to acquire one municipality
+              client?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Customer acquisition cost for a municipality is roughly
+            <strong>NPR 80,000–1.2 lakh</strong>: one 3-day FCHV training event
+            (NPR 25,000), two field visits for onboarding (NPR 20,000), and
+            roughly 2–3 months of a BD person's time at NPR 50–60K/month
+            prorated. Against an annual contract of NPR 5–8 lakh, that's a
+            <strong>CAC payback of under 3 months</strong>. Once onboarded,
+            churn risk is very low — switching costs are high because FCHV
+            retraining and data migration are painful. We're targeting an
+            LTV:CAC ratio above 10x by Year 2.
+          </div>
+          <div class="kp">
+            "CAC under NPR 1.2L. Revenue NPR 5–8L/year. Payback in 3 months.
+            LTV:CAC above 10x. The unit economics work."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qc" data-cat="biz">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-biz">Business</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "You're heavily donor-dependent. What happens when the WHO grant
+              ends or WDF moves to a new priority?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~25 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            We treat every donor project as a municipal sales pipeline. Every
+            district we enter through a WHO or WDF grant, we exit with 3–5
+            signed municipal SaaS contracts. By Year 3, our target is
+            <strong>50%+ of revenue from government SaaS</strong> — donor
+            funding cross-subsidises expansion into new districts but doesn't
+            prop up existing operations. We also deliberately spread across
+            multiple donors: WHO, WDF, UNICEF, GIZ, and bilateral sources like
+            USAID's Digital Health Activity. No single donor represents more
+            than 35% of revenue by Year 2. Donor dependency is a Year 1 reality
+            — it's a Year 3 risk we actively design against.
+          </div>
+          <div class="kp">
+            "We use donor projects to enter new districts and sign municipal
+            contracts. Donors fund growth, not survival."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qc" data-cat="biz">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-biz">Business</span
+              ><span class="badge c-easy">Easy</span>
+            </div>
+            <div class="qtxt">"When do you break even?"</div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~15 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Month 30 — conservatively. That's with 8–12 municipalities on annual
+            contracts plus active donor project revenue. Monthly burn by then is
+            NPR 2–2.5 lakh. Monthly revenue from 10 municipalities at NPR 6 lakh
+            average annually is NPR 5 lakh/month — plus donor project income. We
+            cross break-even in the second half of Year 2 and are meaningfully
+            profitable by Year 3 with 25–35 municipalities. We're not chasing
+            break-even early at the cost of growth — we want to be in 30
+            municipalities before we optimise margins.
+          </div>
+          <div class="kp">
+            "Break-even Month 30. Profitable Year 3. Growth before margin
+            optimisation."
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SECTION 2: MARKET ══ -->
+      <div class="sec-head" data-cat="mkt">
+        <div class="sec-dot dot-mkt"></div>
+        <span class="sec-title" style="color: var(--teal)"
+          >Market & competition</span
+        >
+        <span class="sec-sub">Q7 – Q12 · ~3 minutes</span>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qc" data-cat="mkt">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-mkt">Market</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "India already has the NCD-GoI app with 1 million+ downloads. Why
+              won't India just expand into Nepal and kill you?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~25 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            India's NCD-GoI app is actually our best asset — because it
+            <strong
+              >proves the model works and documents exactly what fails</strong
+            >. Published evaluations show it requires consistent internet — it
+            crashes in low-bandwidth environments. It's built for ASHA workers
+            on India's ABHA digital ID system. None of that infrastructure
+            exists in Nepal. India has never once expanded a government health
+            app across its border — their own rollout took 8 years and is still
+            incomplete in half their districts. Nepal is a sovereign country
+            with its own MoHP, NHMIS, FCHV cadre, and procurement rules. An
+            Indian government app without local government partnership,
+            Nepali-language UX, and offline-first architecture is unusable here.
+            They're not our competitor. They're our reference case.
+          </div>
+          <div class="kp">
+            "India's app proves the model. Their documented failures in offline
+            environments and language localisation are the exact problems we
+            exist to solve."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="qc" data-cat="mkt">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-mkt">Market</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "What stops Medic Mobile or CommCare — who already work with FCHVs
+              in Nepal — from adding an NCD module and making you irrelevant
+              tomorrow?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~25 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Nothing stops them technically — and that's the right question. Our
+            defence is not technical exclusivity. It's
+            <strong>speed, focus, and depth</strong>. Medic Mobile is a platform
+            for building health apps — not a product. Adding an NCD module means
+            their team scoping, designing, and building for Nepal's FCHV-NCD
+            workflow specifically. Their last Nepal-focused feature took 18+
+            months from conception to field deployment. We'll have our pilot
+            running in 8 months. By the time they ship an NCD module, we have
+            200 FCHVs trained on our app and our data in the NHMIS pipeline.
+            Switching costs are high — retraining 200 FCHVs and migrating
+            patient data is not a decision a municipality makes lightly.
+            First-mover advantage in this market is durable because the users
+            are sticky.
+          </div>
+          <div class="kp">
+            "Speed and focus beat platform breadth. We'll have 200 trained FCHVs
+            and NHMIS integration before they finish scoping their NCD module."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="qc" data-cat="mkt">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-mkt">Market</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "You have zero traction. No users, no revenue, no signed
+              contracts. Why should I believe anyone will actually use this?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~25 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            We're pre-launch — no traction yet. But we have three things that
+            replace traction at this stage:
+            <strong
+              >validated demand, a ready user base, and a warm pipeline</strong
+            >. On demand: a published PLOS One study shows FCHVs achieved 94.5%
+            accuracy in CVD risk screening with simple tools — the capability is
+            proven. On users: 168 FCHVs trained by WDF/NeDS in Gandaki Province
+            are our immediate pilot cohort — that's not cold outreach, that's a
+            warm handshake. On pipeline: one municipality has expressed interest
+            in an MOU for a free pilot. We're not guessing at demand. We're
+            responding to an existing, documented gap that MoHP itself
+            acknowledges in the 2026–2030 NCD Action Plan.
+          </div>
+          <div class="kp">
+            "No product traction yet. Validated demand, 168 warm FCHVs, and a
+            municipality MOU in progress. That's what pre-launch looks like when
+            done right."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="qc" data-cat="mkt">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-mkt">Market</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "Nepal has had 30+ governments in 30 years. Political instability
+              will kill your government sales pipeline."
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            We sell to
+            <strong>municipalities, not the federal government</strong>. Nepal's
+            2017 federalisation was designed precisely to insulate local
+            services from central political instability. A change in the federal
+            cabinet does not cancel Pokhara Metropolitan City's ward-level
+            health contracts. Additionally, NCD data reporting is a
+            <strong>constitutional obligation</strong> — municipalities must
+            submit it regardless of which party governs. We're the compliance
+            infrastructure, not a discretionary programme. Our donor revenue —
+            WHO, GIZ, WDF — is completely independent of Nepali politics.
+            Central instability actually strengthens our case: municipalities
+            want tools that work regardless of what Singha Durbar does.
+          </div>
+          <div class="kp">
+            "753 autonomous municipalities, not one federal government.
+            Federalisation is our political risk hedge."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q11 -->
+      <div class="qc" data-cat="mkt">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-mkt">Market</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "How big is the actual addressable market? Give me a number."
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Nepal alone: 753 municipalities × NPR 6 lakh average =
+            <strong>NPR 45 Cr SaaS TAM</strong>. Add 7 province tiers at NPR 25
+            lakh each = NPR 1.75 Cr. Add MoHP national license = NPR 50 lakh.
+            Nepal TAM: roughly <strong>NPR 50 Cr annually</strong>. Our
+            realistic serviceable market in 5 years — 30% penetration of
+            municipalities plus province tiers — is NPR 15–18 Cr. For South Asia
+            regional licensing: Bangladesh alone has 80,000+ community health
+            workers. At $15K per country deployment across 8 countries in the
+            region, that's a $120K one-time licensing pool growing into annual
+            maintenance contracts. Combined Nepal + regional SAM in Year 5:
+            roughly $3–4M ARR.
+          </div>
+          <div class="kp">
+            "Nepal TAM is NPR 50 Cr. Realistic 5-year SAM is NPR 15–18 Cr
+            domestically plus $2–3M regional. Not unicorn scale — but a very
+            profitable, defensible business."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="qc" data-cat="mkt">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-mkt">Market</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "Why hasn't this been built already? If the problem is so obvious,
+              why is no one solving it?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Three reasons. First, <strong>timing</strong>: Nepal's
+            federalisation only happened in 2017 — municipalities only got
+            independent health budgets 7 years ago. The procurement
+            infrastructure for a product like this didn't exist before. Second,
+            <strong>market attractiveness</strong>: global health tech companies
+            see Nepal as too small and too low-margin. They go to India, Kenya,
+            Nigeria — larger markets. That's our protection, not our problem.
+            Third, <strong>capability gap</strong>: building offline-first,
+            Nepali-language, low-literacy UX for FCHVs requires deep local
+            knowledge that outsiders don't have. The combination of
+            federalisation creating the budget, the NCD burden creating the
+            urgency, and smartphone penetration among FCHVs finally reaching
+            critical mass — this window is 2024–2026. We're in it.
+          </div>
+          <div class="kp">
+            "Federalisation created the budget in 2017. Smartphone penetration
+            reached FCHVs by 2022. The window is now, not 5 years ago."
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SECTION 3: TECHNOLOGY ══ -->
+      <div class="sec-head" data-cat="tech">
+        <div class="sec-dot dot-tech"></div>
+        <span class="sec-title" style="color: var(--pur)"
+          >Technology & product</span
+        >
+        <span class="sec-sub">Q13 – Q18 · ~3 minutes</span>
+      </div>
+
+      <!-- Q13 -->
+      <div class="qc" data-cat="tech">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-tech">Tech</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "Offline sync across thousands of cheap Android phones in rural
+              Nepal is technically very hard. Have you actually built this or is
+              it still a slide?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~25 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            We're using a proven, production-tested stack — not inventing new
+            technology. <strong>Flutter + Drift (SQLite) on device</strong> as
+            the primary database. Every write generates a UUID-stamped sync
+            queue entry. <strong>Workmanager</strong> runs a background job
+            every 15 minutes — when connectivity appears, even 2G for 30
+            seconds, it pushes compressed JSON batches to
+            <strong>Supabase on AWS Singapore</strong>. This is the identical
+            pattern that Medic Mobile uses across 60,000+ community health
+            workers in Africa and Asia — including Nepal's own maternal health
+            FCHV programme right now. Conflicts use timestamp-based
+            last-write-wins for single-source data. The hard part isn't the sync
+            architecture — it's device fragmentation. We test on 10+ Android
+            models, target APK under 40MB, and pre-cache all Nepali voice
+            prompts at install.
+          </div>
+          <div class="kp">
+            "Same stack Medic Mobile runs for Nepal's FCHVs today. We're not
+            reinventing offline sync — we're applying it to NCD."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q14 -->
+      <div class="qc" data-cat="tech">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-tech">Tech</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "A patient has a stroke because your CVD risk algorithm gave the
+              wrong score. Who is liable — you, the FCHV, or the municipality?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~25 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            The algorithm we use is the <strong>WHO PEN protocol</strong> — the
+            same one MoHP has officially adopted and trains FCHVs to apply
+            manually today. We're not introducing a new clinical protocol. We're
+            automating one that's already government-endorsed. The app doesn't
+            diagnose or prescribe — it generates a risk score and a referral
+            recommendation. The clinical decision sits with a nurse or doctor at
+            the health post, as it does today. A published PLOS One study shows
+            FCHVs achieve 94.5% agreement with doctors using this protocol
+            manually — removing the manual calculation step reduces error, it
+            doesn't introduce it. On formal liability: Nepal has no specific
+            health app legislation yet. We carry professional indemnity
+            insurance and our terms of use are reviewed by a health law advisor
+            before launch. The baseline we're replacing is no screening at all —
+            that's the real liability.
+          </div>
+          <div class="kp">
+            "We automate a WHO protocol FCHVs already use. The algorithm reduces
+            human calculation error. The clinical decision remains with licensed
+            staff."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q15 -->
+      <div class="qc" data-cat="tech">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-tech">Tech</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "Patient health data on cheap Android phones is a privacy disaster
+              waiting to happen. Lost phone = thousands of records exposed."
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Three layers. <strong>Minimal data collection</strong>: we store
+            name, age, ward number, BP/glucose, risk score — no photos, no
+            national IDs, no addresses. Less than what's already on paper
+            registers. <strong>AES-256 encryption</strong> via SQLCipher on the
+            local database — a stolen phone cannot be read without the PIN.
+            <strong>Remote wipe</strong>: the supervisor dashboard can trigger a
+            database purge on next sync if a phone is reported lost. Also: the
+            alternative is paper registers kept in homes, left at health posts,
+            sometimes lost in floods. We are materially improving privacy
+            compared to the status quo, not degrading it.
+          </div>
+          <div class="kp">
+            "Encrypted local DB. Remote wipe capability. And we collect less
+            data than the paper register sitting in that FCHV's bag right now."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q16 -->
+      <div class="qc" data-cat="tech">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-tech">Tech</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "You claim FHIR and DHIS2 integration. Those are complex
+              standards. Is this real or slide-ware?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Precise answer: we
+            <strong>export FHIR R4 bundles on demand</strong> — we don't build a
+            FHIR-native internal data store, which would be over-engineered for
+            a field app. For DHIS2: it has a well-documented REST API that
+            accepts JSON. Our data schema is already mapped against NHMIS data
+            elements — the actual integration is 4–6 weeks of backend work.
+            That's a Month 9–12 feature, not an MVP feature. In the pilot,
+            supervisors export a CSV that health officers upload manually.
+            That's enough to prove value and earn the government contract that
+            justifies building the full API integration. I won't claim DHIS2
+            integration is live on Day 1 — it isn't. But the path is clear and
+            the technical lift is 4–6 weeks, not 6 months.
+          </div>
+          <div class="kp">
+            "FHIR export, not FHIR store. DHIS2 REST API integration is 4–6
+            weeks of backend work in Month 9. MVP uses CSV export — good enough
+            to earn the contract."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q17 -->
+      <div class="qc" data-cat="tech">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-tech">Tech</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "FCHVs are in their 30s–50s with limited digital literacy. What
+              makes you think they'll actually use your app?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            FCHVs haven't resisted digital tools — they've been handed tools
+            designed without them. The Medic Mobile Community Health Toolkit
+            deployed to <strong>10,500 FCHVs in Nepal</strong> for maternal
+            health achieved strong adoption precisely because it was
+            offline-first, Nepali-language, and co-designed in the field. That's
+            our exact design approach. Our UX rules: maximum 3 taps for any core
+            action, full Nepali voice guidance on every screen, colour-coded
+            risk outputs that communicate meaning without reading. We're
+            conducting co-design FGDs with FCHVs in Kaski before writing a line
+            of code. And we use a peer-champion model — train 5 "super FCHVs"
+            per ward who support their peers — which is proven in FCHV maternal
+            health adoption. The willingness is there. The barrier is bad
+            design, and we're solving that.
+          </div>
+          <div class="kp">
+            "Medic Mobile proved FCHVs adopt digital tools when they're
+            co-designed. 3 taps maximum. Nepali voice. Colour-coded outputs.
+            Same playbook."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q18 -->
+      <div class="qc" data-cat="tech">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-tech">Tech</span
+              ><span class="badge c-easy">Easy</span>
+            </div>
+            <div class="qtxt">
+              "Why Flutter? Why not a web app that works on any device?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~15 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Web apps cannot reliably access device-level offline storage,
+            background sync, push notifications, and Bluetooth (for future BP
+            device integration) the way native apps can. A progressive web app
+            in a browser tab that FCHVs accidentally close mid-screening is not
+            acceptable in a clinical workflow. Flutter gives us near-native
+            performance on cheap Android devices, a single codebase, strong
+            offline storage support via Drift, and a large pool of Nepali
+            developers who know it. It's the right tool. The supervisor
+            dashboard, where connectivity is reliable, is a web app — right tool
+            for that context too.
+          </div>
+          <div class="kp">
+            "Web apps can't do reliable background sync and offline-first at
+            this level. Flutter for the field. Web for the office. Right tool
+            for each context."
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SECTION 4: TEAM & RISK ══ -->
+      <div class="sec-head" data-cat="team">
+        <div class="sec-dot dot-team"></div>
+        <span class="sec-title" style="color: var(--amb)"
+          >Team, risk & closing shots</span
+        >
+        <span class="sec-sub">Q19 – Q25 · ~3 minutes</span>
+      </div>
+
+      <!-- Q19 -->
+      <div class="qc" data-cat="team">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-team">Team</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "This needs deep MoHP relationships, clinical credibility, and
+              tech execution simultaneously. Does your team actually have all
+              three?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~25 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Honestly: we have two of the three strongly and are building the
+            third. <strong>Tech execution</strong>: our developers have shipped
+            Flutter offline-first apps in Nepal before.
+            <strong>Clinical credibility</strong>: our public health advisor has
+            worked on Nepal's WHO-PEN implementation and has published FCHV
+            research — that's the clinical voice.
+            <strong>MoHP relationships</strong>: this is what we're actively
+            building. Our path is through NeDS — Nepal Diabetes Society — who
+            are WDF's implementation partner in Gandaki and have established
+            MoHP access. We approach MoHP as co-designers of our pilot
+            evaluation, not as a procurement target. And I'll say this directly:
+            if there is a specific MoHP or WHO Nepal connection in this room, I
+            would welcome that introduction. Building government relationships
+            is a skill and a process — I know what I have and what I'm still
+            building.
+          </div>
+          <div class="kp">
+            "Tech and clinical credibility: yes. Government relationships:
+            building through NeDS. I know exactly what I have and what I'm
+            working on."
+          </div>
+          <div class="trap-lbl">Don't say this</div>
+          <div class="trap">
+            Don't claim "we have strong MoHP relationships" if you don't.
+            Investors verify. Honest + in-progress is far stronger than a claim
+            that falls apart under scrutiny.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q20 -->
+      <div class="qc" data-cat="team">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-team">Team</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "Why are you the right person to build this? What's your unfair
+              advantage?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            [Personalise this — the framework is:] My unfair advantage is the
+            intersection of three things most people don't have simultaneously:
+            <strong
+              >[your specific Nepal health system knowledge / FCHV access /
+              technical background]</strong
+            >. I've [spent X years / worked with / researched] Nepal's community
+            health system specifically. I know how district health offices work,
+            what FCHVs actually need vs what researchers think they need, and
+            how to build software that runs on a Realme 5 with 2G in
+            Sindhupalchok. An outsider company can hire Nepal consultants. They
+            can't hire this lived understanding. That's what I bring that they
+            can't replicate in 6 months.
+          </div>
+          <div class="kp">
+            "My edge is the intersection of Nepal health system knowledge, FCHV
+            field access, and technical execution. That combination is hard to
+            hire."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q21 -->
+      <div class="qc" data-cat="risk">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-risk">Risk</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "What's the single biggest reason this fails? Be honest."
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Adoption without sustained training support. The technology risk is
+            manageable. The market risk is manageable. The existential risk is
+            building a good product that FCHVs use for 2 weeks and then abandon
+            because there's no one reinforcing the behaviour change. This is
+            what happened to several FCHV digital pilots in Nepal before us. Our
+            mitigation is baked into the cost model: we budget for a
+            <strong>peer-champion model</strong> — 5 trained super-FCHVs per
+            ward, monthly supervisor check-ins, and in-app nudges tied to sync
+            data. If FCHVs stop syncing, supervisors see it immediately and
+            intervene. We don't build adoption once and walk away. But I want to
+            be honest: this is the hardest thing to do at scale, and it's the
+            thing I watch most carefully.
+          </div>
+          <div class="kp">
+            "Adoption without sustained support is the existential risk. Peer
+            champions, supervisor alerts, and in-app nudges are our mitigation —
+            but it's the thing I worry about most."
+          </div>
+          <div class="trap-lbl">Why this answer works</div>
+          <div class="trap">
+            Investors respect founders who know their real risk. Saying "the
+            technology might not work" or "government might not buy" signals you
+            haven't thought deeply. Saying "adoption at scale without support"
+            shows you understand the human dynamics of health systems — which is
+            exactly the sophisticated answer that earns trust.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q22 -->
+      <div class="qc" data-cat="risk">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-risk">Risk</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "MoHP decides to build this themselves. You've proven the concept,
+              they take the idea. What happens to your business?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~20 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Nepal's government has been saying it will build digital health
+            tools for 10 years and hasn't shipped one that FCHVs actually use in
+            the field. The NHMIS has been "almost ready" since 2018. I respect
+            MoHP's intent — but the execution capacity is genuinely not there
+            for a field-facing mobile application. More importantly: if they do
+            try to build it, the most likely outcome is they hire us as the
+            implementation partner. We'll have 2 years of field data, trained
+            FCHVs, and NHMIS integration by then. We'd become the vendor on the
+            government contract, not the casualty of it. And if they truly build
+            a better product — that's good for Nepal's patients. I'll find
+            another problem.
+          </div>
+          <div class="kp">
+            "Government execution capacity for field mobile apps is not there.
+            And if they try, we become the implementation partner — not the
+            competitor."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q23 -->
+      <div class="qc" data-cat="risk">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-risk">Risk</span
+              ><span class="badge c-med">Medium</span>
+            </div>
+            <div class="qtxt">
+              "How much are you raising and what's the valuation?"
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~15 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            We're raising <strong>NPR 30–40 lakh</strong> in this round — a
+            pre-seed bridge to cover 18 months of operations through MVP launch
+            and pilot. We're not raising equity at this stage if we can avoid it
+            — the Nepal Startup Fund grant covers our MVP build cost. This round
+            is for the team, training programme, and BD during the pilot phase.
+            For valuation: at pre-revenue, pre-product stage, I'm not anchoring
+            on a number today. I'd rather discuss terms after our pilot data is
+            in — which is 8 months from now — when we have FCHV adoption rates
+            and a signed MOU. If you want to discuss a convertible note
+            structure with a reasonable cap, I'm open to that conversation.
+          </div>
+          <div class="kp">
+            "NPR 30–40 lakh pre-seed. Grant-first to avoid dilution. Convertible
+            note preferred over priced equity at this stage."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q24 -->
+      <div class="qc" data-cat="risk">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-risk">Risk</span
+              ><span class="badge c-easy">Easy</span>
+            </div>
+            <div class="qtxt">"What does success look like in 12 months?"</div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~15 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">Answer</div>
+          <div class="ans">
+            Three specific things by Month 12:
+            <strong>200 active FCHVs</strong> in 2 wards using the app weekly.
+            <strong>10,000 patients screened</strong> with CVD risk scores
+            calculated and referrals generated.
+            <strong>One signed municipal contract</strong> — not an MOU, an
+            actual paid contract with a PO number. And one bonus: a dataset
+            submitted to a peer-reviewed journal. That last one is free
+            marketing to every public health funder in the world. If I hit those
+            four, the Series A conversation is a very different one.
+          </div>
+          <div class="kp">
+            "200 FCHVs. 10,000 screenings. 1 signed contract. 1 submitted paper.
+            That's Month 12."
+          </div>
+        </div>
+      </div>
+
+      <!-- Q25 -->
+      <div class="qc" data-cat="risk">
+        <div class="qh" onclick="tog(this)">
+          <div class="qh-left">
+            <div class="q-badges">
+              <span class="badge c-risk">Risk</span
+              ><span class="badge c-hard">Hard</span>
+            </div>
+            <div class="qtxt">
+              "Last question. Give me one reason — one specific, concrete reason
+              — this is a business and not just a well-intentioned idea that
+              never makes money."
+            </div>
+          </div>
+          <div class="qright">
+            <span class="timing-pill">~30 sec</span
+            ><span class="chevron">▾</span>
+          </div>
+        </div>
+        <div class="qb">
+          <div class="ans-lbl">
+            Answer — your closing punch. Deliver this with eye contact. Don't
+            rush it.
+          </div>
+          <div class="ans">
+            The budget already exists and is already being spent badly.<br /><br />Every
+            municipality in Nepal allocates NPR 5–15 lakh per year for NCD
+            screening — paper registers, manual data collection, FCHV stipends.
+            That money leaves their account every Falgun and produces reports
+            that arrive at MoHP two months late, half-empty, and filed in a
+            drawer. I'm not asking any municipality to find new money. I'm
+            walking into a room where NPR 5 lakh is already committed to a
+            broken process and offering to make that same NPR 5 lakh actually
+            work — with real-time data, automated NHMIS reports, and measurable
+            BP control outcomes they can show their constituents.<br /><br />The
+            sales question is not "will you pay for a health app?" It's "will
+            you pay us instead of your current broken system?" That is a
+            fundamentally different question. And the answer is yes.
+          </div>
+          <div class="kp">
+            "We're not creating a new budget. We're replacing a broken one. The
+            money is already in the room."
+          </div>
+          <div class="trap-lbl">After this answer — stop talking.</div>
+          <div class="trap">
+            This is your close. Say it, make eye contact, and go silent. Do not
+            add "so yeah, that's kind of why..." or "I hope that answers your
+            question." Land it and let it sit. Silence after a strong close is
+            power.
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM NOTE -->
+      <div class="bottom">
+        <h3>The question behind every question</h3>
+        <p>
+          Every investor question is actually one of four underlying fears. Know
+          which one they're really asking:
+        </p>
+        <p>
+          <b style="color: var(--blu)">Business model questions</b> → "Can this
+          make money or is it a charity?" Always anchor on existing government
+          spend being redirected, not new spend being created.
+        </p>
+        <p>
+          <b style="color: var(--teal)">Market questions</b> → "Is this real
+          demand or manufactured demand?" Cite the PLOS One study, existing WDF
+          programmes, MoHP's own NCD Action Plan. You're not creating a problem
+          — they already know they have it.
+        </p>
+        <p>
+          <b style="color: var(--pur)">Technology questions</b> → "Is this real
+          or vaporware?" Name the specific library. Name the specific precedent.
+          Specificity signals credibility.
+        </p>
+        <p>
+          <b style="color: var(--red)">Risk questions</b> → "Why will this
+          fail?" Never get defensive. Acknowledge the risk honestly, name the
+          mitigation concretely, then reframe toward the broken baseline you're
+          replacing.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function tog(el) {
+        const c = el.closest(".qc");
+        const wasOpen = c.classList.contains("open");
+        c.classList.toggle("open", !wasOpen);
+      }
+      function filter(cat, btn) {
+        document
+          .querySelectorAll(".fb")
+          .forEach((b) => b.classList.remove("on"));
+        btn.classList.add("on");
+        document.querySelectorAll(".qc").forEach((c) => {
+          const show = cat === "all" || c.dataset.cat === cat;
+          c.style.display = show ? "" : "none";
+          if (!show) c.classList.remove("open");
+        });
+        document.querySelectorAll(".sec-head").forEach((h) => {
+          const show = cat === "all" || h.dataset.cat === cat;
+          h.style.display = show ? "" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>
