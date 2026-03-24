@@ -3,22 +3,1064 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Swasthya Mitra — Democratic Workflow</title>
-    <meta
-      http-equiv="refresh"
-      content="0; url=/democratic_workflow_detailed_html.html"
-    />
-    <script>
-      window.location.replace("/democratic_workflow_detailed_html.html");
-    </script>
+    <title>Swasthya Mitra - Democratic Workflow</title>
+    <style>
+      :root {
+        --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+        --color-background-primary: #ffffff;
+        --color-background-secondary: #f7f6f2;
+        --color-border-secondary: #cbc8bd;
+        --color-border-tertiary: #ddd9cc;
+        --color-text-primary: #1a1a18;
+        --color-text-secondary: #5c5b57;
+        --color-text-tertiary: #8a8880;
+        --color-text-info: #3c3489;
+        --border-radius-lg: 12px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-background-primary: #171715;
+          --color-background-secondary: #10100f;
+          --color-border-secondary: #444441;
+          --color-border-tertiary: #333330;
+          --color-text-primary: #f0efe9;
+          --color-text-secondary: #cbc8bd;
+          --color-text-tertiary: #9e9a8a;
+          --color-text-info: #cecbf6;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        background: var(--color-background-secondary);
+        color: var(--color-text-primary);
+        line-height: 1.5;
+        padding: 0 0 2rem;
+      }
+
+      .top {
+        max-width: 980px;
+        margin: 1rem auto 0;
+        padding: 0 1.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .top a {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #085041;
+        border: 0.5px solid #c9d8d2;
+        background: #e9f6f1;
+        padding: 4px 10px;
+        border-radius: 999px;
+      }
+
+      .top a:hover {
+        opacity: 0.9;
+      }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0.75rem auto 0;
+        padding: 0 1.25rem;
+      }
+
+      .hero {
+        background: var(--color-background-primary);
+        border: 0.5px solid var(--color-border-tertiary);
+        border-radius: var(--border-radius-lg);
+        padding: 1rem 1.1rem;
+        margin-bottom: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: 20px;
+        margin-bottom: 0.25rem;
+      }
+
+      .hero p {
+        font-size: 12px;
+        color: var(--color-text-secondary);
+      }
+
+      .section-label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: var(--color-text-tertiary);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .role-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .role-grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .role-card {
+        border-radius: var(--border-radius-lg);
+        padding: 12px 14px;
+        border: 0.5px solid;
+        cursor: pointer;
+        transition: opacity 0.15s;
+      }
+
+      .role-card:hover {
+        opacity: 0.85;
+      }
+
+      .role-card .tag {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 2px 8px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 6px;
+      }
+
+      .role-card .title {
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 3px;
+      }
+
+      .role-card .sub {
+        font-size: 12px;
+      }
+
+      .role-card .owns {
+        font-size: 11px;
+        margin-top: 6px;
+        padding-top: 6px;
+        border-top: 0.5px solid;
+      }
+
+      .role-card .owns span {
+        font-weight: 500;
+      }
+
+      .rc-purple {
+        background: #eeedfe;
+        border-color: #afa9ec;
+      }
+
+      .rc-purple .tag {
+        background: #afa9ec;
+        color: #26215c;
+      }
+
+      .rc-purple .title {
+        color: #3c3489;
+      }
+
+      .rc-purple .sub {
+        color: #534ab7;
+      }
+
+      .rc-purple .owns {
+        border-color: #afa9ec;
+        color: #534ab7;
+      }
+
+      .rc-teal {
+        background: #e1f5ee;
+        border-color: #5dcaa5;
+      }
+
+      .rc-teal .tag {
+        background: #5dcaa5;
+        color: #04342c;
+      }
+
+      .rc-teal .title {
+        color: #085041;
+      }
+
+      .rc-teal .sub {
+        color: #0f6e56;
+      }
+
+      .rc-teal .owns {
+        border-color: #5dcaa5;
+        color: #0f6e56;
+      }
+
+      .rc-coral {
+        background: #faece7;
+        border-color: #f0997b;
+      }
+
+      .rc-coral .tag {
+        background: #f0997b;
+        color: #4a1b0c;
+      }
+
+      .rc-coral .title {
+        color: #712b13;
+      }
+
+      .rc-coral .sub {
+        color: #993c1d;
+      }
+
+      .rc-coral .owns {
+        border-color: #f0997b;
+        color: #993c1d;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .rc-purple {
+          background: #3c3489;
+          border-color: #534ab7;
+        }
+
+        .rc-purple .tag {
+          background: #534ab7;
+          color: #eeedfe;
+        }
+
+        .rc-purple .title {
+          color: #cecbf6;
+        }
+
+        .rc-purple .sub {
+          color: #afa9ec;
+        }
+
+        .rc-purple .owns {
+          border-color: #534ab7;
+          color: #afa9ec;
+        }
+
+        .rc-teal {
+          background: #085041;
+          border-color: #0f6e56;
+        }
+
+        .rc-teal .tag {
+          background: #0f6e56;
+          color: #e1f5ee;
+        }
+
+        .rc-teal .title {
+          color: #9fe1cb;
+        }
+
+        .rc-teal .sub {
+          color: #5dcaa5;
+        }
+
+        .rc-teal .owns {
+          border-color: #0f6e56;
+          color: #5dcaa5;
+        }
+
+        .rc-coral {
+          background: #712b13;
+          border-color: #993c1d;
+        }
+
+        .rc-coral .tag {
+          background: #993c1d;
+          color: #faece7;
+        }
+
+        .rc-coral .title {
+          color: #f5c4b3;
+        }
+
+        .rc-coral .sub {
+          color: #f0997b;
+        }
+
+        .rc-coral .owns {
+          border-color: #993c1d;
+          color: #f0997b;
+        }
+      }
+
+      .decision-band {
+        border: 0.5px dashed var(--color-border-secondary);
+        border-radius: var(--border-radius-lg);
+        padding: 10px 14px;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .decision-band .rule {
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .decision-band .rule .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .dp {
+        background: #7f77dd;
+      }
+
+      .dt {
+        background: #1d9e75;
+      }
+
+      .de {
+        background: #d85a30;
+      }
+
+      .workflow-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .workflow-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .step-card {
+        border: 0.5px solid var(--color-border-tertiary);
+        border-radius: var(--border-radius-lg);
+        padding: 12px 14px;
+        background: var(--color-background-primary);
+        cursor: pointer;
+        transition: background 0.15s;
+        position: relative;
+      }
+
+      .step-card:hover {
+        background: var(--color-background-secondary);
+      }
+
+      .step-num {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--color-text-tertiary);
+        margin-bottom: 4px;
+      }
+
+      .step-title {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--color-text-primary);
+        margin-bottom: 4px;
+      }
+
+      .step-sub {
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        line-height: 1.5;
+      }
+
+      .step-owner {
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 0.5px solid var(--color-border-tertiary);
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+
+      .owner-pill {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 1px 7px;
+        border-radius: 20px;
+      }
+
+      .op-purple {
+        background: #eeedfe;
+        color: #3c3489;
+      }
+
+      .op-teal {
+        background: #e1f5ee;
+        color: #085041;
+      }
+
+      .op-coral {
+        background: #faece7;
+        color: #712b13;
+      }
+
+      .op-gray {
+        background: #f1efe8;
+        color: #444441;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .op-purple {
+          background: #3c3489;
+          color: #cecbf6;
+        }
+
+        .op-teal {
+          background: #085041;
+          color: #9fe1cb;
+        }
+
+        .op-coral {
+          background: #712b13;
+          color: #f5c4b3;
+        }
+
+        .op-gray {
+          background: #444441;
+          color: #d3d1c7;
+        }
+      }
+
+      .arrow-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        margin: 4px 0;
+      }
+
+      .arr-line {
+        height: 1px;
+        background: var(--color-border-secondary);
+        flex: 1;
+      }
+
+      .arr-head {
+        width: 0;
+        height: 0;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 6px solid var(--color-border-secondary);
+      }
+
+      .loop-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        color: var(--color-text-tertiary);
+        border: 0.5px dashed var(--color-border-tertiary);
+        border-radius: 20px;
+        padding: 3px 10px;
+        margin-bottom: 8px;
+      }
+
+      .rules-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .rule-card {
+        border-radius: var(--border-radius-lg);
+        padding: 12px 14px;
+        border: 0.5px solid;
+        cursor: pointer;
+        transition: opacity 0.15s;
+      }
+
+      .rule-card:hover {
+        opacity: 0.85;
+      }
+
+      .rc-amber {
+        background: #faeeda;
+        border-color: #ef9f27;
+      }
+
+      .rc-amber .rule-icon {
+        background: #ef9f27;
+        color: #412402;
+      }
+
+      .rc-amber .rule-title {
+        color: #633806;
+      }
+
+      .rc-amber .rule-body {
+        color: #854f0b;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .rc-amber {
+          background: #633806;
+          border-color: #ba7517;
+        }
+
+        .rc-amber .rule-icon {
+          background: #ba7517;
+          color: #faeeda;
+        }
+
+        .rc-amber .rule-title {
+          color: #fac775;
+        }
+
+        .rc-amber .rule-body {
+          color: #ef9f27;
+        }
+      }
+
+      .rule-icon {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 2px 8px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 6px;
+      }
+
+      .rule-title {
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+
+      .rule-body {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .outcome-strip {
+        border: 0.5px dashed var(--color-border-secondary);
+        border-radius: var(--border-radius-lg);
+        padding: 12px 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .outcome-item {
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .check {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #e1f5ee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .check svg {
+        width: 8px;
+        height: 8px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .check {
+          background: #085041;
+        }
+      }
+
+      .prompt-feedback {
+        margin-top: 10px;
+        border: 0.5px solid var(--color-border-tertiary);
+        border-radius: 10px;
+        background: var(--color-background-primary);
+        color: var(--color-text-secondary);
+        padding: 8px 10px;
+        font-size: 11px;
+        display: none;
+      }
+
+      @media (max-width: 920px) {
+        .role-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .role-grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        .workflow-grid,
+        .workflow-grid-3,
+        .rules-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <p>
-      Redirecting to the Democratic Workflow page. If this does not happen
-      automatically, open
-      <a href="/democratic_workflow_detailed_html.html"
-        >/democratic_workflow_detailed_html.html</a
-      >.
-    </p>
+    <div class="top">
+      <a href="../index.html">Back to Implementation Plan</a>
+      <a href="../rapidfire_qna/">Rapidfire QnA</a>
+    </div>
+
+    <div class="wrap">
+      <div class="hero">
+        <h1>Democratic Workflow</h1>
+        <p>
+          Flat team, distributed authority, fast decisions. Everyone
+          contributes, one owner decides per domain.
+        </p>
+      </div>
+
+      <div style="padding: 0 0 1rem">
+        <p class="section-label">Roles &amp; domain ownership</p>
+
+        <div class="role-grid">
+          <div
+            class="role-card rc-purple"
+            onclick="
+              sendPrompt('Tell me more about the UX Research & Strategy role')
+            "
+          >
+            <div class="tag">UX &amp; strategy</div>
+            <div class="title">UX Research &amp; Strategy</div>
+            <div class="sub">User problems, flows, validation</div>
+            <div class="owns">
+              <span>Final say on:</span> user logic &amp; flows
+            </div>
+          </div>
+          <div
+            class="role-card rc-teal"
+            onclick="
+              sendPrompt('Tell me more about the Design System Owner role')
+            "
+          >
+            <div class="tag">Design</div>
+            <div class="title">Design System Owner</div>
+            <div class="sub">UI kit, components, consistency</div>
+            <div class="owns"><span>Final say on:</span> visual system</div>
+          </div>
+          <div
+            class="role-card rc-teal"
+            onclick="sendPrompt('Tell me more about the Core UX Designer role')"
+          >
+            <div class="tag">Design</div>
+            <div class="title">Core UX Designer</div>
+            <div class="sub">Key flows, FCHV, patient journey</div>
+            <div class="owns"><span>Final say on:</span> flow usability</div>
+          </div>
+        </div>
+
+        <div class="role-grid-2">
+          <div
+            class="role-card rc-coral"
+            onclick="sendPrompt('Tell me more about the Engineering Lead role')"
+          >
+            <div class="tag">Engineering</div>
+            <div class="title">Engineering Lead</div>
+            <div class="sub">Architecture, backend, feasibility</div>
+            <div class="owns">
+              <span>Final say on:</span> technical decisions
+            </div>
+          </div>
+          <div
+            class="role-card rc-coral"
+            onclick="sendPrompt('Tell me more about the Product Engineer role')"
+          >
+            <div class="tag">Engineering</div>
+            <div class="title">Product Engineer</div>
+            <div class="sub">Frontend, implementation</div>
+            <div class="owns">
+              <span>Final say on:</span> interaction &amp; real behavior
+            </div>
+          </div>
+        </div>
+
+        <div class="decision-band">
+          <div class="rule">
+            <div class="dot dp"></div>
+            UX issue -&gt; UX Research decides
+          </div>
+          <div class="rule">
+            <div class="dot dt"></div>
+            UI issue -&gt; Design System decides
+          </div>
+          <div class="rule">
+            <div class="dot de"></div>
+            Tech issue -&gt; Engineering decides
+          </div>
+          <div
+            class="rule"
+            style="color: var(--color-text-tertiary); font-style: italic"
+          >
+            Everyone contributes - one person decides - max 15 min
+          </div>
+        </div>
+
+        <p class="section-label">Workflow cycle</p>
+
+        <div class="loop-badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path
+              d="M2 6C2 3.8 3.8 2 6 2c1.2 0 2.3.5 3 1.4"
+              stroke="var(--color-text-tertiary)"
+              stroke-width="1.2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M10 6c0 2.2-1.8 4-4 4-1.2 0-2.3-.5-3-1.4"
+              stroke="var(--color-text-tertiary)"
+              stroke-width="1.2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M9 1.5l.5 1.9-1.9.5"
+              stroke="var(--color-text-tertiary)"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M3 10.5l-.5-1.9 1.9-.5"
+              stroke="var(--color-text-tertiary)"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Repeating cycle - iterate fast, do not over-discuss
+        </div>
+
+        <div class="workflow-grid">
+          <div
+            class="step-card"
+            onclick="
+              sendPrompt('How does the idea proposal phase work in practice?')
+            "
+          >
+            <div class="step-num">step 1</div>
+            <div class="step-title">Propose</div>
+            <div class="step-sub">
+              Anyone pitches a feature. Brief team discussion, max 10 to 15 min.
+            </div>
+            <div class="step-owner">
+              <span class="owner-pill op-gray">anyone</span>
+            </div>
+          </div>
+
+          <div
+            class="step-card"
+            onclick="sendPrompt('How does the flow definition phase work?')"
+          >
+            <div class="step-num">step 2</div>
+            <div class="step-title">Define flow</div>
+            <div class="step-sub">
+              UX Research maps steps, gets input from everyone, then decides the
+              final flow.
+            </div>
+            <div class="step-owner">
+              <span class="owner-pill op-purple">UX Research</span>
+            </div>
+          </div>
+
+          <div
+            class="step-card"
+            onclick="
+              sendPrompt(
+                'How does the design phase split between system and screens?',
+              )
+            "
+          >
+            <div class="step-num">step 3</div>
+            <div class="step-title">Design</div>
+            <div class="step-sub">
+              System owner prepares components. Core designer builds screens
+              using the system.
+            </div>
+            <div class="step-owner">
+              <span class="owner-pill op-teal">Design System</span>
+              <span class="owner-pill op-teal">Core UX</span>
+            </div>
+          </div>
+
+          <div
+            class="step-card"
+            onclick="sendPrompt('What happens in the tech planning phase?')"
+          >
+            <div class="step-num">step 4</div>
+            <div class="step-title">Tech plan</div>
+            <div class="step-sub">
+              Eng Lead decides architecture, simplifies where needed, and flags
+              constraints.
+            </div>
+            <div class="step-owner">
+              <span class="owner-pill op-coral">Eng Lead</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrow-row">
+          <div class="arr-line"></div>
+          <div class="arr-head"></div>
+        </div>
+
+        <div class="workflow-grid-3">
+          <div
+            class="step-card"
+            onclick="
+              sendPrompt(
+                'How does the build phase work between the two engineers?',
+              )
+            "
+          >
+            <div class="step-num">step 5</div>
+            <div class="step-title">Build</div>
+            <div class="step-sub">
+              Product Eng implements UI and interactions. Eng Lead handles
+              backend logic and supports.
+            </div>
+            <div class="step-owner">
+              <span class="owner-pill op-coral">Product Eng</span>
+              <span class="owner-pill op-coral">Eng Lead</span>
+            </div>
+          </div>
+
+          <div
+            class="step-card"
+            onclick="sendPrompt('How does the team review phase work?')"
+          >
+            <div class="step-num">step 6</div>
+            <div class="step-title">Team review</div>
+            <div class="step-sub">
+              All 5 give feedback. UX fixes usability. Designer fixes UI. Dev
+              fixes bugs.
+            </div>
+            <div class="step-owner">
+              <span class="owner-pill op-gray">all 5 people</span>
+            </div>
+          </div>
+
+          <div
+            class="step-card"
+            onclick="
+              sendPrompt(
+                'What does iterate fast mean in practice for a startup team?',
+              )
+            "
+          >
+            <div class="step-num">step 7</div>
+            <div class="step-title">Iterate</div>
+            <div class="step-sub">
+              Build a quick version, test it, improve it. Do not debate - ship
+              and learn.
+            </div>
+            <div
+              class="step-owner"
+              style="
+                font-style: italic;
+                color: var(--color-text-tertiary);
+                font-size: 11px;
+              "
+            >
+              loops back to step 1
+            </div>
+          </div>
+        </div>
+
+        <p class="section-label" style="margin-top: 20px">Critical rules</p>
+
+        <div class="rules-grid">
+          <div
+            class="rule-card rc-amber"
+            onclick="
+              sendPrompt(
+                'How do we avoid the everyone decides everything trap in a flat team?',
+              )
+            "
+          >
+            <div class="rule-icon">rule 1</div>
+            <div class="rule-title">No everyone decides everything</div>
+            <div class="rule-body">
+              Everyone contributes, but one domain owner makes the final call.
+              No endless debates.
+            </div>
+          </div>
+
+          <div
+            class="rule-card rc-amber"
+            onclick="
+              sendPrompt('How should we time-box discussions in practice?')
+            "
+          >
+            <div class="rule-icon">rule 2</div>
+            <div class="rule-title">Time-box every discussion</div>
+            <div class="rule-body">
+              Hard cap at 15 to 20 minutes. If stuck, move forward and adjust in
+              the next iteration.
+            </div>
+          </div>
+
+          <div
+            class="rule-card rc-amber"
+            onclick="
+              sendPrompt(
+                'What does default to action mean and how do we apply it?',
+              )
+            "
+          >
+            <div class="rule-icon">rule 3</div>
+            <div class="rule-title">Default to action</div>
+            <div class="rule-body">
+              When stuck, build a quick version. Test it. Improve it. Never
+              block on certainty.
+            </div>
+          </div>
+
+          <div
+            class="rule-card rc-amber"
+            onclick="
+              sendPrompt(
+                'How do we respect domain boundaries without creating silos?',
+              )
+            "
+          >
+            <div class="rule-icon">rule 4</div>
+            <div class="rule-title">Respect domain lines</div>
+            <div class="rule-body">
+              Do not override UX on UX. Do not override dev on tech. Authority
+              is distributed, not chaotic.
+            </div>
+          </div>
+        </div>
+
+        <div class="outcome-strip">
+          <div class="outcome-item">
+            <div class="check">
+              <svg viewBox="0 0 8 8">
+                <polyline
+                  points="1,4 3,6 7,2"
+                  stroke="#085041"
+                  stroke-width="1.2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            No single boss
+          </div>
+
+          <div class="outcome-item">
+            <div class="check">
+              <svg viewBox="0 0 8 8">
+                <polyline
+                  points="1,4 3,6 7,2"
+                  stroke="#085041"
+                  stroke-width="1.2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Everyone empowered
+          </div>
+
+          <div class="outcome-item">
+            <div class="check">
+              <svg viewBox="0 0 8 8">
+                <polyline
+                  points="1,4 3,6 7,2"
+                  stroke="#085041"
+                  stroke-width="1.2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Fast decisions
+          </div>
+
+          <div class="outcome-item">
+            <div class="check">
+              <svg viewBox="0 0 8 8">
+                <polyline
+                  points="1,4 3,6 7,2"
+                  stroke="#085041"
+                  stroke-width="1.2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Distributed authority
+          </div>
+
+          <div
+            class="outcome-item"
+            style="cursor: pointer"
+            onclick="
+              sendPrompt(
+                'Help me assign these 5 roles to my actual team members based on their skills',
+              )
+            "
+          >
+            <div class="check" style="background: #eeedfe">
+              <svg viewBox="0 0 8 8">
+                <path
+                  d="M4 1v6M1 4h6"
+                  stroke="#3c3489"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <span style="color: var(--color-text-info)"
+              >Assign roles to my team -&gt;</span
+            >
+          </div>
+        </div>
+
+        <div id="promptFeedback" class="prompt-feedback"></div>
+      </div>
+    </div>
+
+    <script>
+      function sendPrompt(text) {
+        const box = document.getElementById("promptFeedback");
+        if (!box) return;
+        box.style.display = "block";
+        box.textContent = "Suggested next prompt: " + text;
+      }
+    </script>
   </body>
 </html>
