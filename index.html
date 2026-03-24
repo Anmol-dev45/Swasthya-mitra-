@@ -85,7 +85,6 @@
         border-color: var(--teal);
       }
       .route-link {
-        margin-left: auto;
         font-size: 11px;
         padding: 3px 10px;
         border-radius: 20px;
@@ -101,6 +100,9 @@
       .route-link:hover {
         background: var(--teal);
         color: #fff;
+      }
+      .route-link:first-of-type {
+        margin-left: auto;
       }
 
       /* ── HERO ── */
@@ -744,6 +746,7 @@
       <button class="nav-btn" onclick="scrollToSection('risks', this)">
         Risks
       </button>
+      <a class="route-link" href="/democratic_workflow/">Democratic Workflow</a>
       <a class="route-link" href="/rapidfire_qna/">Rapidfire QnA</a>
     </nav>
 
